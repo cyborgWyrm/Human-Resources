@@ -38,6 +38,19 @@ public class Main
 		
 		System.out.println();
 		
+		// testing person
+		Person test = new Person("test",1.4,1000);
+		System.out.println(test.toString());
+		
+		PersonSet test2 = new PersonSet();
+		test2.add(test1);
+		test2.add(new Person("test",1.4,1000));
+		test2.add(new Person("Gary",10,20));
+		
+		System.out.println(test2.get(0));
+		System.out.println(test2.get(1));
+		System.out.println(test2.get(2));
+		
 		/*
 		// Don't overcomplicate the data
 		// reading. After skipping the

@@ -2,8 +2,7 @@
 
 public interface PersonList {
 	
-	// interface regarding a list of peeps
-	
-	
+	public void add(Person person);
+	public Person get(int index);
 	
 }
