@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public class PersonSet implements PersonList {
 	
@@ -15,21 +15,6 @@ public class PersonSet implements PersonList {
 	
 	public Person get(int index) {
 		return list.get(index);
-	}
-	
-	@Override
-	private boolean equals(Object o) {
-		if (o == null) {return false;}
-		if (o == this) {return true;}
-		if (!o.instanceOf(Person)) {return false;}
-		
-		Person p = (Person)o;
-		if (this.name == o.name && this.height == o.height && his.weight == o.weight) {
-			return true;
-		}
-		
-		return false;
-		
 	}
 	
 	
