@@ -29,8 +29,6 @@ by which, Inheritance or Composition?
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main 
@@ -60,14 +58,14 @@ public class Main
 		*/
 		
 		// create file reader
-		Path path = Paths.get("hr.txt");
+		File file = new File("hr.txt");
 		Scanner fileReader = null;
 		
 		try {
-			fileReader = new Scanner(path);
+			fileReader = new Scanner(file);
 		}
 		catch (IOException e) {
-			System.out.println("Cannot find hr.txt");
+			System.out.println("Cannot find file");
 			System.exit(1);
 		}
 		
