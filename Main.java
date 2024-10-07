@@ -29,27 +29,23 @@ by which, Inheritance or Composition?
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main 
 {
 	public static void main(String[] args) 
 	{
-		
-		System.out.println();
-		
+		// TESTS
 		// testing person
 		Person test = new Person("test",1.4,1000);
-		System.out.println(test.toString());
 		
+		// testing person set
 		PersonSet test2 = new PersonSet();
 		test2.add(test);
 		test2.add(new Person("test",1.4,1000));
 		test2.add(new Person("Gary",10,20));
-		
-		System.out.println(test2.get(0));
-		System.out.println(test2.get(1));
-		System.out.println(test2.get(2));
 		
 		/*
 		// Don't overcomplicate the data
@@ -62,6 +58,32 @@ public class Main
 		double height = fileReader.nextDouble();
 		double weight = fileReader.nextDouble();
 		*/
+		
+		// create file reader
+		Path path = Paths.get("hr.txt");
+		Scanner fileReader = null;
+		
+		try {
+			fileReader = new Scanner(path);
+		}
+		catch (IOException e) {
+			System.out.println("Cannot find hr.txt");
+			System.exit(1);
+		}
+		
+		// read file 
+		fileReader.nextLine();
+		
+		while (fileReader.hasNextLine()) {
+			// read in values
+			String name = fileReader.next();
+			double height = fileReader.nextDouble();
+			double weight = fileReader.nextDouble();
+			
+			// create a person and print
+			Person temp = new Person(name,height,weight);
+			System.out.println(temp);
+		}
 		
 		
 		
