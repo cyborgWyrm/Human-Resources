@@ -20,6 +20,20 @@ public class PersonSet implements PersonList {
 		return list.get(index);
 	}
 	
+	// toString
+	public String toString() {
+		String toReturn = String.format("%-10s%10s%10s","Name","Height (cm)","Weight (kg)");
+		
+		// add each person with a new line after
+		for (int i = 0; i < list.size(); i++) {
+			String person = list.get(i).toString() + "\n";
+			toReturn = toReturn + person;
+		}
+		
+		return toReturn;
+		
+	}
+	
 	
 	
 }
