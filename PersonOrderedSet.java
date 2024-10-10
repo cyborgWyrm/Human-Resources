@@ -16,15 +16,24 @@ public class PersonOrderedSet extends PersonSet {
 	private void place(Person person) {
 		int spot = findSpot(person.getName());
 		
-		for (int i = list.size(); i > spot; i--) {
-			Person temp = list.get(i-1);
-			list.set(i,temp);
+		if (spot == -1) {
+			list.add(person);
 		}
-		
-		list.set(spot,person);
+		else {
+			for (int i = list.size(); i > spot; i--) {
+				Person temp = list.get(i-1);
+				list.set(i,temp);
+			}
+			
+			list.set(spot,person);
+		}
 	}
 
 	private int findSpot(String name) {
+		if (list.size() == 0) {
+			return -1;
+		}
+		
 		int index = 0;
 		
 		while(true) {

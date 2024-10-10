@@ -41,13 +41,23 @@ public class Person {
 	
 	// getters and setters
 	public String getName() {
-		return this.name;
+		return name;
 	}
 	public double getHeight() {
-		return this.height;
+		return height;
 	}
 	public double getWeight() {
-		return this.weight;
+		return weight;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	public void setWeight(double weight) {
+		this.weight = weight;
 	}
 	
 }

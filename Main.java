@@ -35,15 +35,8 @@ public class Main
 {
 	public static void main(String[] args) 
 	{
-		// TESTS
-		// testing person
-		Person test = new Person("test",1.4,1000);
-		
-		// testing person set
-		PersonSet test2 = new PersonSet();
-		test2.add(test);
-		test2.add(new Person("test",1.4,1000));
-		test2.add(new Person("Gary",10,20));
+		PersonOrderedSet orderSet = new PersonOrderedSet();
+		PersonImperialSet imperialSet = new PersonImperialSet();
 		
 		/*
 		// Don't overcomplicate the data
@@ -79,8 +72,9 @@ public class Main
 			double weight = fileReader.nextDouble();
 			
 			// create a person and print
-			Person temp = new Person(name,height,weight);
-			System.out.println(temp);
+			Person person = new Person(name,height,weight);
+			orderSet.add(person);
+			imperialSet.add(person);
 		}
 		
 		
