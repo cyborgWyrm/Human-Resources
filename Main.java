@@ -77,6 +77,8 @@ public class Main
 			imperialSet.add(person);
 		}
 		
+		//System.out.println(imperialSet.toString());
+		
 		
 		
 		/*try

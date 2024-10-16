@@ -15,14 +15,18 @@ public class PersonOrderedSet extends PersonSet {
 	
 	private void place(Person person) {
 		int spot = findSpot(person.getName());
+		System.out.println(spot + " " + list.size());
 		
-		if (spot == -1) {
+		if (spot == -1 || spot == list.size()) {
 			list.add(person);
 		}
 		else {
 			for (int i = list.size(); i > spot; i--) {
 				Person temp = list.get(i-1);
-				list.set(i,temp);
+				if (i == list.size()) {list.add(temp);}
+				else {
+					list.set(i,temp);
+				}
 			}
 			
 			list.set(spot,person);
@@ -36,7 +40,7 @@ public class PersonOrderedSet extends PersonSet {
 		
 		int index = 0;
 		
-		while(true) {
+		while(index < list.size()) {
 			Person otherPerson = list.get(index);
 			String name2 = otherPerson.getName();
 			if (name.compareTo(name2) < 0) {
@@ -49,6 +53,8 @@ public class PersonOrderedSet extends PersonSet {
 				//error?
 			}
 		}
+		
+		return list.size();
 		
 	}
 
