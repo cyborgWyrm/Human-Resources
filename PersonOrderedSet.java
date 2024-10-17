@@ -15,7 +15,6 @@ public class PersonOrderedSet extends PersonSet {
 	
 	private void place(Person person) {
 		int spot = findSpot(person.getName());
-		System.out.println(spot + " " + list.size());
 		
 		if (spot == -1 || spot == list.size()) {
 			list.add(person);
@@ -51,6 +50,7 @@ public class PersonOrderedSet extends PersonSet {
 			}
 			else {
 				//error?
+				// index++
 			}
 		}
 		

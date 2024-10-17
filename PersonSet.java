@@ -24,9 +24,9 @@ public class PersonSet implements PersonList {
 	public String toString() {
 		String toReturn = String.format("%-10s%10s%10s","Name","Height (cm)","Weight (kg)");
 		
-		// add each person with a new line after
+		// add each person with a new line
 		for (int i = 0; i < list.size(); i++) {
-			String person = list.get(i).toString() + "\n";
+			String person = "\n" + list.get(i).toString();
 			toReturn = toReturn + person;
 		}
 		

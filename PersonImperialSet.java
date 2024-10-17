@@ -11,8 +11,10 @@ public class PersonImperialSet extends PersonSet {
 		double metricWeight = person.getWeight();
 		double metricHeight = person.getHeight();
 		
-		person.setWeight(metricWeight * 2.20462);
-		person.setHeight(metricHeight * 0.393701);
+		double newWeight = Math.round(metricWeight * 2.20462);
+		double newHeight = Math.round(metricHeight * 0.393701);
+		person.setWeight(newWeight);
+		person.setHeight(newHeight);
 		
 		super.add(person);
 	}
@@ -24,9 +26,9 @@ public class PersonImperialSet extends PersonSet {
 		// copying it is easier
 		String toReturn = String.format("%-10s%10s%10s","Name","Height (in)","Weight (lbs)");
 		
-		// add each person with a new line after
+		// add each person with a new line
 		for (int i = 0; i < list.size(); i++) {
-			String person = list.get(i).toString() + "\n";
+			String person = "\n" + list.get(i).toString();
 			toReturn = toReturn + person;
 		}
 		

@@ -28,7 +28,7 @@ public class Person {
 		if (!(o instanceof Person)) {return false;}
 		
 		Person p = (Person)o;
-		if (this.name == p.name && this.height == p.height && this.weight == p.weight) {
+		if (this.name.equals(p.name) && this.height == p.height && this.weight == p.weight) {
 			return true;
 		}
 		

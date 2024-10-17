@@ -71,13 +71,13 @@ public class Main
 			double height = fileReader.nextDouble();
 			double weight = fileReader.nextDouble();
 			
-			// create a person and print
-			Person person = new Person(name,height,weight);
-			orderSet.add(person);
-			imperialSet.add(person);
+			// create persons in sets
+			orderSet.add(new Person(name,height,weight));
+			imperialSet.add(new Person(name,height,weight));
 		}
 		
-		//System.out.println(imperialSet.toString());
+		System.out.println(imperialSet.toString());
+		System.out.println(orderSet.toString());
 		
 		
 		
