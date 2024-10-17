@@ -76,15 +76,14 @@ public class Main
 			imperialSet.add(new Person(name,height,weight));
 		}
 		
-		System.out.println(imperialSet.toString());
-		System.out.println(orderSet.toString());
-		
-		
-		
-		/*try
+		// prepare filewriter
+		FileWriter fileWriterOrder = null;
+		try
 		{	
-			FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
-			fileWriterOrder.write("testing");
+			fileWriterOrder = new FileWriter("outputfile.txt");
+			fileWriterOrder.write(imperialSet.toString());
+			fileWriterOrder.write("\n\n\n");
+			fileWriterOrder.write(orderSet.toString());
 			fileWriterOrder.close();
 		}
 		catch(IOException e)
@@ -92,6 +91,11 @@ public class Main
 			e.printStackTrace();
 			System.out.println(e);
 			System.exit(1);
-		}*/
+		}
+		
+		
+		System.out.println(imperialSet.toString());
+		System.out.println(orderSet.toString());
+		
 	}
 }
