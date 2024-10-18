@@ -35,23 +35,12 @@ public class Main
 {
 	public static void main(String[] args) 
 	{
+		// instantiate an ordered set and imperial set
 		PersonOrderedSet orderSet = new PersonOrderedSet();
 		PersonImperialSet imperialSet = new PersonImperialSet();
 		
-		/*
-		// Don't overcomplicate the data
-		// reading. After skipping the
-		// first row, you can use the 
-		// following to read a row of
-		// character info, assuming your
-		// Scanner is named "fileReader"
-		String name = fileReader.next();
-		double height = fileReader.nextDouble();
-		double weight = fileReader.nextDouble();
-		*/
-		
 		// create file reader
-		File file = new File("hr.txt");
+		File file = new File(args[0]);
 		Scanner fileReader = null;
 		
 		try {
@@ -77,14 +66,19 @@ public class Main
 		}
 		
 		// prepare filewriter
-		FileWriter fileWriterOrder = null;
 		try
 		{	
-			fileWriterOrder = new FileWriter("outputfile.txt");
-			fileWriterOrder.write(imperialSet.toString());
-			fileWriterOrder.write("\n\n\n");
-			fileWriterOrder.write(orderSet.toString());
-			fileWriterOrder.close();
+			// write imperial data to file
+			FileWriter fileWriterImp = new FileWriter("hr_imperial_set_output.txt");
+			fileWriterImp.write("Imperial Set Output\n" + imperialSet.toString());
+			
+			// write ordered data to file
+			FileWriter fileWriterOrd = new FileWriter("hr_ordered_set_output.txt");
+			fileWriterOrd.write("Ordered Set Output\n" + orderSet.toString());
+			
+			// close filereaders
+			fileWriterImp.close();
+			fileWriterOrd.close();
 		}
 		catch(IOException e)
 		{
@@ -93,8 +87,12 @@ public class Main
 			System.exit(1);
 		}
 		
-		
+		// print data on console
+		System.out.println("Imperial Set");
 		System.out.println(imperialSet.toString());
+		System.out.println();
+		
+		System.out.println("Ordered Set");
 		System.out.println(orderSet.toString());
 		
 	}

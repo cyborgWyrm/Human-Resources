@@ -16,7 +16,7 @@ public class Person {
 	}
 	
 	public String toString() {
-		return String.format("%-10s%10s%10s",name,Double.toString(height),Double.toString(weight));
+		return String.format("%-15s%-15s%s",name,Double.toString(height),Double.toString(weight));
 	}
 	
 	// equals

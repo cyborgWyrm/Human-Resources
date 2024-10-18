@@ -22,7 +22,7 @@ public class PersonSet implements PersonList {
 	
 	// toString
 	public String toString() {
-		String toReturn = String.format("%-10s%10s%10s","Name","Height (cm)","Weight (kg)");
+		String toReturn = String.format("%-15s%-15s%-15s","Name","Height (cm)","Weight (kg)");
 		
 		// add each person with a new line
 		for (int i = 0; i < list.size(); i++) {

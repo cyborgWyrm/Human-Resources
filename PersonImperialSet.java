@@ -8,6 +8,7 @@ public class PersonImperialSet extends PersonSet {
 	
 	@Override
 	public void add(Person person) {
+		// change weight and height to imperial 
 		double metricWeight = person.getWeight();
 		double metricHeight = person.getHeight();
 		
@@ -16,6 +17,7 @@ public class PersonImperialSet extends PersonSet {
 		person.setWeight(newWeight);
 		person.setHeight(newHeight);
 		
+		// add person
 		super.add(person);
 	}
 	
@@ -24,7 +26,7 @@ public class PersonImperialSet extends PersonSet {
 		// i just copied this code from personSet and changed the values...
 		// it would probably be better form to somehow call super for this but
 		// copying it is easier
-		String toReturn = String.format("%-10s%10s%10s","Name","Height (in)","Weight (lbs)");
+		String toReturn = String.format("%-15s%-15s%s","Name","Height (in)","Weight (lbs)");
 		
 		// add each person with a new line
 		for (int i = 0; i < list.size(); i++) {
